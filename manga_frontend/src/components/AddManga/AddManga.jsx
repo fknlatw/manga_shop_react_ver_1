@@ -8,7 +8,7 @@ const AddManga = () =>{
         volume: 0,
         author: '{}',
         publisher: '',
-        img: '/images/',
+        img: './images/',
         genre: '{}',
         price: 0,
         description: ''
@@ -40,7 +40,6 @@ const AddManga = () =>{
                 type="text" 
                 placeholder="series"
             />
-
             <input 
                 value={newManga.name} 
                 onChange={e=>setNewManga((value)=>({
@@ -50,7 +49,6 @@ const AddManga = () =>{
                 type="text" 
                 placeholder="name"
             />
-
             <input
                 value={newManga.volume} 
                 onChange={e=>setNewManga((value)=>({
@@ -61,7 +59,7 @@ const AddManga = () =>{
                 placeholder="volume"
                 min="0"
             />
-
+            
             <input 
                 value={newManga.author} 
                 onChange={e=>setNewManga((value)=>({
@@ -71,7 +69,7 @@ const AddManga = () =>{
                 type="text" 
                 placeholder="author"
             />
-
+            
             <input 
                 value={newManga.publisher} 
                 onChange={e=>setNewManga((value)=>({
@@ -81,7 +79,7 @@ const AddManga = () =>{
                 type="text" 
                 placeholder="publisher"
             />
-
+            
             <input 
                 value={newManga.img} 
                 onChange={e=>setNewManga((value)=>({
@@ -91,7 +89,7 @@ const AddManga = () =>{
                 type="text" 
                 placeholder="img"
             />
-
+            
             <input 
                 value={newManga.genre} 
                 onChange={e=>setNewManga((value)=>({
@@ -101,7 +99,7 @@ const AddManga = () =>{
                 type="text" 
                 placeholder="genre"
             />
-
+            
             <input 
                 value={newManga.price} 
                 onChange={e=>setNewManga((value)=>({
@@ -112,7 +110,7 @@ const AddManga = () =>{
                 placeholder="price"
                 min="0"
             />
-
+            
             <textarea 
                 value={newManga.description} 
                 onChange={e=>setNewManga((value)=>({
