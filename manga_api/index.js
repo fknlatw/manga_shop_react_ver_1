@@ -39,8 +39,34 @@ app.get('/manga', async(req, res) => {
     } catch (error) {
         console.log(error);
     }
-    
 });
+
+app.get('/manga/:id', async(req, res) => {
+    try {
+        const { id } = req.params;
+        const mangaBook = await pool.query("SELECT * FROM manga WHERE id = $1", [id]);
+        res.json(mangaBook.rows[0]);
+    } catch (error) {
+        console.log(error)
+    }
+});
+
+app.put('/manga/:id', async(req, res) => {
+    try {
+        const {id} = req.params;
+        const {
+            series, name, volume,
+            author, publisher, img,
+            genre, price, description
+        } = req.body;
+
+        
+        const updateManga = await pool.query('UPDATE manga SET (series, name, volume, author, publisher, img, genre, price, description) = ($1, $2, $3, $4, $5, $6, $7, $8, $9) WHERE id = $10',[series, name, volume, author, publisher, img, genre, price, description, id]);
+        res.json("updated")
+    } catch (error) {
+        console.log(error);
+    }
+})
 
 // app.get('/', (req, res) => {
 //     res.json({message: ['hello', 'world']})
