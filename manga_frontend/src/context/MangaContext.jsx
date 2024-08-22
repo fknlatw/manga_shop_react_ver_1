@@ -4,13 +4,15 @@ export const MangaContext = createContext();
 
 const MangaProvider = ({children}) => {
     const [manga, setManga] = useState([]);
-
+    const [isLoading, setIsLoading] = useState(false);
     useEffect(()=>{
         const fetchManga = async () => {
             try {
-                const response = await fetch('http://localhost:5000/manga');
+                setIsLoading(true);
+                const response = await fetch('http://localhost:5000/manga')
                 const data = await response.json();
                 setManga(data);
+                setIsLoading(false);                
             } catch (error) {
                 console.log(error);
             }
@@ -22,7 +24,8 @@ const MangaProvider = ({children}) => {
     return (
         <MangaContext.Provider value={{
             manga, 
-            setManga
+            setManga,
+            isLoading
         }}>
             {children}
         </MangaContext.Provider>

@@ -1,5 +1,21 @@
-.container{
-    max-width: 1400px;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+:root{
+    --buttonColor: #161f6d;
+    --buttonPadding: 16px;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto Flex", system-ui;
+    list-style: none;
+    color: inherit;
+    text-decoration: none;
+}
+.edit_container{
+    max-width: 1800px;
     margin: 0 auto;
     overflow: hidden;
 }
+
+

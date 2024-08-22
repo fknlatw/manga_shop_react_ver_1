@@ -1,5 +1,6 @@
-import {useState} from 'react';
+import {useState, useContext} from 'react';
 import './styles.css';
+import { MangaContext } from '../../context/MangaContext';
 
 const EditManga = () => {
     const [getId, setGetId] = useState(0);
@@ -9,12 +10,14 @@ const EditManga = () => {
         volume: 0,
         author: '{}',
         publisher: '',
-        img: './images/',
+        img: '',
         genre: '{}',
         price: 0,
         description: ''
     });
+    const {manga} = useContext(MangaContext);
 
+    console.log(manga);
     const handleClick = async(e) => {
         e.preventDefault();
         try {
@@ -46,7 +49,7 @@ const EditManga = () => {
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(body)
             });
-            window.location='/';
+            window.location='/edit';
             console.log(JSON.stringify(body));
         } catch (error) {
             console.log(error);
@@ -60,6 +63,7 @@ const EditManga = () => {
             <input
                 value={getId}
                 onChange={e=>setGetId(e.target.value)} 
+                max={manga.length}
                 min="0"
                 type="number" 
             />
@@ -69,7 +73,7 @@ const EditManga = () => {
 
         
         
-            <div>
+        <div>
                 <h3>Серия</h3>
                 <input 
                     type="text"
@@ -143,17 +147,17 @@ const EditManga = () => {
                     value={editManga.price}
                 />
                 <h3>Описание</h3>
-                <textarea 
-                    rows={6} 
-                    type="text"
-                    onChange={e=>setEditManga(value => ({
-                        ...value,
-                        description: e.target.value
-                    }))} 
-                    value={editManga.description}
-                />
-                <button onClick={e=>handleEdit(e)}>save edited</button>
-            </div>
+            <textarea 
+                rows={6} 
+                type="text"
+                onChange={e=>setEditManga(value => ({
+                    ...value,
+                    description: e.target.value
+                }))} 
+                value={editManga.description}
+            />
+            <button onClick={e=>handleEdit(e)}>save edited</button>
+        </div>
         
         
     </form>

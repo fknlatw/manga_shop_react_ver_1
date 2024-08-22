@@ -2,10 +2,12 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const pool = require('./db');
+const path = require('path');
 
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'images')));
 
 app.post('/manga', async(req, res) => {
     try {
@@ -35,7 +37,8 @@ app.post('/manga', async(req, res) => {
 app.get('/manga', async(req, res) => {
     try {
         const allManga = await pool.query('SELECT * FROM manga');
-        res.json(allManga.rows);
+        const sortedManga = allManga.rows.sort((a,b) => a.series.localeCompare(b.series));
+        res.json(sortedManga);
     } catch (error) {
         console.log(error);
     }

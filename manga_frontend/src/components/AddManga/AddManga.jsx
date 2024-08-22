@@ -8,7 +8,7 @@ const AddManga = () =>{
         volume: 0,
         author: '{}',
         publisher: '',
-        img: './images/',
+        img: 'http://localhost:5000/',
         genre: '{}',
         price: 0,
         description: ''
@@ -22,7 +22,7 @@ const AddManga = () =>{
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(newManga)
             });
-            window.location='/'
+            window.location='/edit'
             console.log(JSON.stringify(newManga))
         } catch (error) {
             console.log(error);
@@ -31,6 +31,8 @@ const AddManga = () =>{
 
     return(
         <form>
+            Серия
+
             <input
                 value={newManga.series} 
                 onChange={e=>setNewManga((value)=>({
@@ -40,6 +42,9 @@ const AddManga = () =>{
                 type="text" 
                 placeholder="series"
             />
+
+            Название
+
             <input 
                 value={newManga.name} 
                 onChange={e=>setNewManga((value)=>({
@@ -49,6 +54,9 @@ const AddManga = () =>{
                 type="text" 
                 placeholder="name"
             />
+
+            Номер тома
+
             <input
                 value={newManga.volume} 
                 onChange={e=>setNewManga((value)=>({
@@ -57,9 +65,11 @@ const AddManga = () =>{
                 }))}
                 type="number" 
                 placeholder="volume"
-                min="0"
+                min="-1"
             />
-            
+
+            Автор
+
             <input 
                 value={newManga.author} 
                 onChange={e=>setNewManga((value)=>({
@@ -70,6 +80,8 @@ const AddManga = () =>{
                 placeholder="author"
             />
             
+            Издатель
+
             <input 
                 value={newManga.publisher} 
                 onChange={e=>setNewManga((value)=>({
@@ -80,6 +92,8 @@ const AddManga = () =>{
                 placeholder="publisher"
             />
             
+            Картинка
+
             <input 
                 value={newManga.img} 
                 onChange={e=>setNewManga((value)=>({
@@ -90,6 +104,8 @@ const AddManga = () =>{
                 placeholder="img"
             />
             
+            Жанр
+
             <input 
                 value={newManga.genre} 
                 onChange={e=>setNewManga((value)=>({
@@ -100,6 +116,8 @@ const AddManga = () =>{
                 placeholder="genre"
             />
             
+            Цена
+
             <input 
                 value={newManga.price} 
                 onChange={e=>setNewManga((value)=>({
@@ -111,6 +129,8 @@ const AddManga = () =>{
                 min="0"
             />
             
+            Описание
+
             <textarea 
                 value={newManga.description} 
                 onChange={e=>setNewManga((value)=>({

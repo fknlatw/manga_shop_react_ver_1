@@ -1,0 +1,162 @@
+.cart{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 700px;
+    height: 100vh;
+    z-index: 4;
+    padding: 1rem;
+    transform: translateX(0);
+}
+.cartContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 1rem;
+}
+.cart:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    backdrop-filter: blur(10px);
+    z-index: -1;
+}
+
+.cart .hidden{
+    transform: translateX(100%);
+    
+}
+.cartItems{
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    width: 100%;
+    gap: 1rem;
+    height: 80vh;
+    
+}
+
+.closeButton{
+    background: var(--buttonColor);
+    padding: var(--buttonPadding);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 1rem;
+    transition: 0.3s;
+}
+.closeButton:hover{
+    color: var(--buttonColor);
+    background: white;
+}
+.cartItem{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    border: 1px solid #000000b4;;
+}
+
+.cartItem .cartImg{
+    height: 70px;
+    width: 40px;
+}
+.cartItem .cartImg img{
+    height: 100%;
+    width: 100%;
+}
+.cartButtons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.total{
+    font-size: 1rem;
+    font-weight: 600;
+}
+.clearCartButton{
+    display: flex;
+    font-size: 1rem;
+    background: var(--buttonColor);
+    padding: var(--buttonPadding);
+    border-radius: 10px;
+    color: #fff;
+    border: 0;
+    font-weight: 700;
+    transition: 0.3s;
+}
+.clearCartButton:hover{
+    color: var(--buttonColor);
+    background: #fff;
+}
+.cartInfo{
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+}
+.authorSeriesName{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.cartCount{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.countPlus, .countMinus, .count{
+    width: 1.5rem;
+    display: flex;
+    border: 0;
+    padding: 0.4rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.countPlus, .countMinus{
+    background: var(--buttonColor);
+    color: #fff;
+    transition: 0.3s;
+}
+
+.countPlus:hover, .countMinus:hover{
+    background: white;
+    color: var(--buttonColor);
+}
+
+.count{
+    background-color: whitesmoke;
+}
+
+
+
+@media  screen and (max-width: 750px) {
+    .cart{
+        width: 100%;
+        
+    }
+    
+}
+
+@media screen and (max-width: 420px){
+    .cartImg{
+        display: none;
+    }
+}

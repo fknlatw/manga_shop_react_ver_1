@@ -1,0 +1,116 @@
+.container{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.skeleton{
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.skeletonCard{
+    animation: 0.7s ease-in-out infinite loading;
+    width: 100%;
+    height: 380px;
+    border-radius: 10px;
+}
+
+@keyframes loading {
+    0%{
+        box-shadow: none;
+    }
+    50%{
+        box-shadow: 1px 3px 0px 5px rgba(0, 0, 0, 0.116);
+    }
+    100%{
+        box-shadow: none; 
+    }
+}
+.card{
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 5px 5px  5px rgba(0, 0, 0, 50%); 
+    gap: 0.5rem;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    height: 380px;
+}
+
+.card:hover .info{
+    bottom: -1px;
+}
+
+.seriesName{
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+img{
+    object-fit: cover;
+    overflow-y: hidden;
+    width: 100%;
+    height: 100%;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 0.5rem;
+    position: absolute;
+    bottom: -100%;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    transition: bottom 0.3s;
+}
+.info:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff6b;
+    backdrop-filter: blur(10px);
+    z-index: -1;
+}
+.author{
+    text-align: center;
+    font-size: 1.2rem;
+}
+.pricing{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    align-items: center;
+}
+
+.price{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.addToCard{
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color:  #fff;
+    background-color: #161f6d;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
