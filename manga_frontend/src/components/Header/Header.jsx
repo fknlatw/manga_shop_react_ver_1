@@ -3,6 +3,7 @@ import Logo from '../../../public/bg.jpeg';
 import "./styles.css";
 import {FaCartArrowDown} from 'react-icons/fa';
 import { CartContext } from '../../context/CartContext';
+import {Link} from 'react-router-dom';
 
 const Header = () => {
     const {handleClick} = useContext(CartContext);
@@ -11,9 +12,9 @@ const Header = () => {
             <img className="logo" src={Logo} alt="" />
             <nav className="nav">
                 <ul className="navList">
-                    <li className="navLink"><a href="">Каталог</a></li>
-                    <li><a className="navLink" href="">Главная</a></li>
-                    <li><a className="navLink" href="">О нас</a></li>
+                    <li ><Link className="navLink" to='/catalog'>Каталог</Link></li>
+                    <li><Link className="navLink" to="/">Главная</Link></li>
+                    <li><Link className="navLink" to="/about">О нас</Link></li>
                     <li>
                         <button onClick={handleClick} className="navCartButton">
                             <FaCartArrowDown/>

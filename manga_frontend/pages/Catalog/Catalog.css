@@ -114,3 +114,9 @@ img{
     border-radius: 10px;
 }
 
+.titleContainer{
+    grid-column: 1/-1;
+}
+
+
+

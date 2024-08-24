@@ -8,6 +8,8 @@ const CartProvider = ({children}) => {
     const [cartIsOpen, setCartIsOpen] = useState(false);
     const [cartItems, setCartItems] = useState([]);
 
+    
+
     const clearCart = () => {
         setCartItems([]);
     }

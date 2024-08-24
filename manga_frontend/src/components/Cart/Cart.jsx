@@ -30,7 +30,7 @@ const Cart = () => {
                         onClick={clearCart}
                         className="clearCartButton"
                     >
-                        Clear cart
+                        Очистить
                     </button>
                 </div>
 

@@ -21,11 +21,14 @@ const MangaProvider = ({children}) => {
         fetchManga();
     },[]);
 
+    const mixedManga = manga.sort((book) => Math.random()-0.5).slice(1, 9);
+
     return (
         <MangaContext.Provider value={{
             manga, 
             setManga,
-            isLoading
+            isLoading,
+            mixedManga
         }}>
             {children}
         </MangaContext.Provider>

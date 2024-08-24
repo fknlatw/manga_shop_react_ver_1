@@ -7,9 +7,11 @@ import {
   RouterProvider,
   Outlet
 } from 'react-router-dom';
-import Catalog from "../pages/Home/Catalog";
+import Catalog from "../pages/Catalog/Catalog";
 import Header from "./components/Header/Header";
 import Cart from "./components/Cart/Cart";
+import Main from "../pages/Main/Main";
+import AboutUs from "../pages/AboutUs/AboutUs"
 
 const EditLayout = () =>{
   return <div className='edit_container'>
@@ -40,8 +42,16 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: '/',
+        path: '/catalog',
         element: <Catalog />
+      },
+      {
+        path: '/',
+        element: <Main/>
+      },
+      {
+        path: '/about',
+        element: <AboutUs/>
       }
     ]
   }
