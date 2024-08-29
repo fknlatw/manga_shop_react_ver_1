@@ -23,12 +23,31 @@ const MangaProvider = ({children}) => {
 
     const mixedManga = manga.sort((book) => Math.random()-0.5).slice(1, 9);
 
+    const horrorManga = manga.filter(book => {
+        for(let i in book.genre){
+            if(book.genre[i] === "Ужасы"){
+                return book;
+            }
+        }
+    });
+
+    const seinenManga = manga.filter(book=>{
+        for(let i in book.genre){
+            if(book.genre[i] === "Сейнен"){
+                return book;
+            }
+        }
+    });
+
+
+
     return (
         <MangaContext.Provider value={{
             manga, 
             setManga,
             isLoading,
-            mixedManga
+            horrorManga,
+            seinenManga
         }}>
             {children}
         </MangaContext.Provider>

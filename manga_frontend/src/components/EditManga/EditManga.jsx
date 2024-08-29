@@ -17,7 +17,7 @@ const EditManga = () => {
     });
     const {manga} = useContext(MangaContext);
 
-    console.log(manga);
+
     const handleClick = async(e) => {
         e.preventDefault();
         try {
@@ -50,7 +50,7 @@ const EditManga = () => {
                 body: JSON.stringify(body)
             });
             window.location='/edit';
-            console.log(JSON.stringify(body));
+            
         } catch (error) {
             console.log(error);
         }

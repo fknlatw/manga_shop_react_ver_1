@@ -12,3 +12,12 @@ CREATE TABLE manga (
 );
 
 INSERT INTO manga (author) VALUES (ARRAY['hello', 'hello']);
+
+CREATE TABLE blog (
+    blogId SERIAL PRIMARY KEY,
+    blogTitle VARCHAR(255),
+    blogText VARCHAR(1024),
+    blogImg VARCHAR(255)
+);
+
+INSERT INTO blog (blogTitle, blogText, blogImg) VALUES ('hello', 'world', 'hws');
