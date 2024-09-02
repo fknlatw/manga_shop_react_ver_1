@@ -1,0 +1,22 @@
+.searchContainer{
+    grid-column: 1/-1;
+    display: flex;
+    gap: 1rem;
+}
+.searchInput{
+    min-width: 100px;
+    flex: 1;
+    border-radius: 10px;
+}
+.searchButton{
+    padding: 1rem;
+    border-radius: 10px;
+    border: 0;
+    color: #fff;
+    background: var(--buttonColor);
+    transition: background 0.3s, color 0.3s;
+}
+.searchButton:hover{
+    color: var(--buttonColor);
+    background: #fff;
+}

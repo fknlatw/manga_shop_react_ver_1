@@ -8,20 +8,23 @@ const ContactForm = () => {
     const sendEmail = (e) => {
         e.preventDefault();
         // const {user_email, from_name, message} = form.current
-            emailjs.sendForm(
-                "service_plzbw9p", 
-                "template_p6tx8eg", 
-                form.current, {
-                    publicKey: "L2eLWDE9cOdpwoOnc"
-                }
-            ).then(
-                () => {
-                    console.log("SUCCESS!");
-                },
-                (error) => {
-                    console.log("FAILED...", error.text)
-                }
-            );
+        emailjs.sendForm(
+            "service_plzbw9p", 
+            "template_p6tx8eg", 
+            form.current, {
+                publicKey: "L2eLWDE9cOdpwoOnc"
+            }
+        ).then(
+            () => {
+                console.log("SUCCESS!");
+                form.current.from_name.value = "";
+                form.current.user_email.value = "";
+                form.current.message.value = "";
+            },
+            (error) => {
+                console.log("FAILED...", error.text)
+            }
+        );
         
         
     }

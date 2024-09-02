@@ -6,10 +6,24 @@
 }
 
 .blogContainer{
-    padding: 1rem;
+    padding: 0 1rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1rem;
+}
+
+.blogButton{
+    padding: 1rem;
+    color: #fff;
+    background: var(--buttonColor);
+    border-radius: 10px;
+    border: 0;
+    transition: color 0.3s, background 0.3s;
+}
+.blogButton:hover{
+    color: var(--buttonColor);
+    background: #fff;
 }
 
 .blogImgContainer{
@@ -20,6 +34,8 @@
     object-fit: cover;
     width: 100%;
 }
+
+
 
 @media screen and (max-width: 800px){
     .blogItem{

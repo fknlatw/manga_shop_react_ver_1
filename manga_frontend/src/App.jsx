@@ -15,12 +15,12 @@ import AboutUs from "../pages/AboutUs/AboutUs"
 
 const EditLayout = () =>{
   return <div className='edit_container'>
-    <h2>СПИСОК КНИГ</h2>
-    <MangaTable />
     <h2>ИЗМЕНИТЬ КНИГУ</h2>
     <EditManga/>
     <h2>ДОБАВИТЬ КНИГУ</h2>
     <AddManga />
+    <h2>СПИСОК КНИГ</h2>
+    <MangaTable />
   </div>
 }
 

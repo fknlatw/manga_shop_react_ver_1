@@ -52,7 +52,7 @@ const Cart = () => {
                                         }</span>
 
                                         <span>
-                                        {cartItem.item.author}
+                                        {cartItem.item.author.join(", ")}
                                         </span>
                                     </div>
                                     

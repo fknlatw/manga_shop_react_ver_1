@@ -11,6 +11,7 @@
     align-items: center;
     height: 400px;
     justify-content: flex-end;
+    margin-bottom: 1rem;
 }
 .bannerImgContainer{
     position: absolute;
@@ -31,7 +32,7 @@
 }
 
 .aboutText{
-    padding: 2rem 1rem;
+    padding: 0 1rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
